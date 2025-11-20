@@ -10,8 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf3342c79c66a1e4b8c25ab6c6a40845, type: 3}
-  m_Name: 5
+  m_Name: 3
   m_EditorClassIdentifier: Assembly-CSharp::MathQuestion
-  operandA: 3
-  operandB: 2
-  mathOperator: 0
+  operands: 0100000002000000
+  operators: 00000000
