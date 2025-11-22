@@ -111,4 +111,14 @@ public class ArithmeticQuestion : BaseQuestion
         _ => 0
     };
 
+    public override void OnRenderBoard(GameObject boardroot)
+    {
+        // Optional: Custom rendering logic for arithmetic questions
+        var renderer = boardroot.GetComponent<BlackboardRenderer>();
+        if (renderer != null)
+        {
+            renderer.ShowEquation(GetQuestionText());
+        }
+    }
+
 }

@@ -8,6 +8,8 @@ public class QuizManager : MonoBehaviour
     public int currentQuestionIndex = 0;
     public int correctCount = 0;
 
+    public BlackboardRenderer blackboardRenderer;
+
     public void AskQuestion()
     {
         if (currentQuestionIndex < questions.Length)
@@ -16,10 +18,16 @@ public class QuizManager : MonoBehaviour
             Debug.Log($"Q{currentQuestionIndex + 1} [{q.category}] (D{q.difficulty}): {q.GetQuestionText()}");
 
             quizStation.SetCurrentQuestion(q);
+
+            if (blackboardRenderer != null) { 
+                q.OnRenderBoard(blackboardRenderer.gameObject);
+            }
             quizUI.RefreshUI(); // ensure UI reads from station or manager
         }
         else
         {
+            blackboardRenderer.ClearBoard();
+
             Debug.Log($"Quiz finished! Correct answers: {correctCount}/{questions.Length}");
             quizUI.questionText.text = "Quiz Finished!";
             quizUI.answerText.text = $"Score: {correctCount}/{questions.Length}";
