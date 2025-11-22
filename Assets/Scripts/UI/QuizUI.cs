@@ -26,7 +26,7 @@ public class QuizUI : MonoBehaviour
         }
     }
 
-    public void ShowAnswer(int playerAnswer, bool isCorrect)
+    public void ShowAnswer(string playerAnswer, bool isCorrect)
     {
         answerText.text = $"Your Answer: {playerAnswer} - " +
                           (isCorrect ? "<color=green>Correct!</color>" : "<color=red>Incorrect!</color>");
