@@ -2,24 +2,21 @@ using UnityEngine;
 
 public class QuizManager : MonoBehaviour
 {
-    public MathQuestion[] questions;
+    public BaseQuestion[] questions;
     public QuizStation quizStation;
-    public QuizUI quizUI;   // reference to your UI script
+    public QuizUI quizUI;
     public int currentQuestionIndex = 0;
     public int correctCount = 0;
 
     public void AskQuestion()
     {
-        if (currentQuestionIndex < questions.Length )
+        if (currentQuestionIndex < questions.Length)
         {
-            MathQuestion q = questions[currentQuestionIndex];
-            Debug.Log($"Q{currentQuestionIndex + 1}: {q.GetQuestionText()}");
+            BaseQuestion q = questions[currentQuestionIndex];
+            Debug.Log($"Q{currentQuestionIndex + 1} [{q.category}] (D{q.difficulty}): {q.GetQuestionText()}");
 
-            // Assign the station's current question
             quizStation.SetCurrentQuestion(q);
-
-            // Update UI
-            quizUI.RefreshUI();
+            quizUI.RefreshUI(); // ensure UI reads from station or manager
         }
         else
         {
@@ -29,12 +26,12 @@ public class QuizManager : MonoBehaviour
         }
     }
 
-    public void SubmitAnswer(int playerAnswer)
+    public void SubmitAnswer(string playerAnswer)
     {
         if (currentQuestionIndex < questions.Length)
         {
-            MathQuestion q = questions[currentQuestionIndex];
-            bool isCorrect = q.GetCorrectAnswer() == playerAnswer;
+            BaseQuestion q = questions[currentQuestionIndex];
+            bool isCorrect = q.CheckAnswer(playerAnswer);
 
             if (isCorrect)
             {
@@ -43,15 +40,13 @@ public class QuizManager : MonoBehaviour
             }
             else
             {
-                Debug.Log($"Incorrect! The correct answer was {q.GetCorrectAnswer()}");
+                Debug.Log($"Incorrect! Correct answer: {q.GetCorrectAnswerText()}");
             }
 
-            // Update UI with the submitted answer
             quizUI.ShowAnswer(playerAnswer, isCorrect);
-
             currentQuestionIndex++;
-
             AskQuestion();
         }
     }
+
 }
