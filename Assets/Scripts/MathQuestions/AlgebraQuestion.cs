@@ -32,6 +32,11 @@ public class AlgebraQuestion : BaseQuestion
 
     public override void OnRenderBoard(GameObject boardroot)
     {
-        Debug.Log($"Rendering Algebra Question on board not implemented yet. {GetQuestionText()}");
+        // Optional: Custom rendering logic for arithmetic questions
+        var renderer = boardroot.GetComponent<BlackboardRenderer>();
+        if (renderer != null)
+        {
+            renderer.ShowEquation(GetQuestionText());
+        }
     }
 }

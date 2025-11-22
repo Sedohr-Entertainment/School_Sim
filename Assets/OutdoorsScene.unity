@@ -840,8 +840,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::QuizManager
   questions:
   - {fileID: 11400000, guid: b7568522f140f974aa0d6e94f665de19, type: 2}
+  - {fileID: 11400000, guid: ce52c8a2c8c34174a8b1f2704bd79e4a, type: 2}
   - {fileID: 11400000, guid: 51a63f1b86cd1af4995581e85dc0c12d, type: 2}
-  - {fileID: 11400000, guid: b3fd771dc6ea0744193c124dd2103f4c, type: 2}
   - {fileID: 11400000, guid: 5318ac64ff6d73d4f875ef26717c64d6, type: 2}
   quizStation: {fileID: 334506359}
   quizUI: {fileID: 670838382}
@@ -935,7 +935,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 1954759999}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 0.1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
