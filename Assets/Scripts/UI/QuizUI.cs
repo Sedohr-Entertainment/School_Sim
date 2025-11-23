@@ -28,7 +28,8 @@ public class QuizUI : MonoBehaviour
         else
         {
             questionText.text = "Quiz Finished!";
-            answerText.text = $"Score: {quizManager.CorrectCount}/{quizManager.TotalQuestions()}";
+            answerText.text = $"Score: {quizManager.CorrectCount}/{quizManager.TotalQuestions()}" + 
+                $"Questions remaining: {quizManager.GetQuestionsRemaining()}";
             if (metaText != null) metaText.text = "";
         }
     }

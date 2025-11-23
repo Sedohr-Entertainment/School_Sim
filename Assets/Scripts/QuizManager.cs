@@ -19,6 +19,10 @@ public class QuizManager : MonoBehaviour
         get { return correctCount; }
     }
 
+    public int GetQuestionsRemaining()
+    {
+        return (filteredQuestions?.Count ?? 0) - currentQuestionIndex;
+    }
 
 
     public QuizStation quizStation;
