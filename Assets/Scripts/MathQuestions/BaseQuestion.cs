@@ -1,6 +1,19 @@
 using UnityEngine;
 
-public enum MathCategory { Arithmetric, Algebra, Geometry, Trigonometry, Calculus, Statistics }
+public enum MathCategory { 
+    Arithmetric,
+    TimesTables,
+    Algebra,
+    Fractions,
+    Decimals,
+    Geometry,
+    Measurement,
+    Dataprobabiliy,
+    Trigonometry, 
+    Calculus, 
+    Statistics,
+    LinearAlgebra,
+}
 
 public abstract class BaseQuestion : ScriptableObject
 {

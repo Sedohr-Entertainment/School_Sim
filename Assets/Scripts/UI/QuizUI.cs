@@ -4,7 +4,7 @@ using UnityEngine;
 public class QuizUI : MonoBehaviour
 {
     public QuizManager quizManager;
-    public TMP_Text questionText, answerText;   // shows the submitted answer
+    public TMP_Text questionText, answerText, metaText;   // shows the submitted answer
 
     void Start()
     {
@@ -14,17 +14,26 @@ public class QuizUI : MonoBehaviour
     // Refresh only when a new question is asked
     public void RefreshUI()
     {
-        if (quizManager.questions.Length > quizManager.currentQuestionIndex)
+        // Use filteredQuestions instead of questions[]
+        if (quizManager.HasMoreQuestions())
         {
-            questionText.text = quizManager.questions[quizManager.currentQuestionIndex].GetQuestionText();
+            BaseQuestion current = quizManager.GetCurrentQuestion();
 
+            questionText.text = current.GetQuestionText();
+
+            // Optional: show category + difficulty
+            if (metaText != null)
+                metaText.text = $"Category: {current.category} | Difficulty: {current.difficulty}";
         }
         else
         {
             questionText.text = "Quiz Finished!";
-            answerText.text = $"Score: {quizManager.correctCount}/{quizManager.questions.Length}";
+            answerText.text = $"Score: {quizManager.CorrectCount}/{quizManager.TotalQuestions()}" + 
+                $"Questions remaining: {quizManager.GetQuestionsRemaining()}";
+            if (metaText != null) metaText.text = "";
         }
     }
+
 
     public void ShowAnswer(string playerAnswer, bool isCorrect)
     {
