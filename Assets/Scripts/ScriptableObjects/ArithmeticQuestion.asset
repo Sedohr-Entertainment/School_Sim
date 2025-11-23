@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf3342c79c66a1e4b8c25ab6c6a40845, type: 3}
-  m_Name: 6x2
+  m_Name: ArithmeticQuestion
   m_EditorClassIdentifier: Assembly-CSharp::ArithmeticQuestion
-  category: 1
+  category: 0
   difficulty: 1
-  operands: 0600000002000000
-  operators: 02000000
+  operands: 010000000100000005000000000000000800000000000000
+  operators: 0000000001000000020000000300000000000000

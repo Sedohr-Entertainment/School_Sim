@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf3342c79c66a1e4b8c25ab6c6a40845, type: 3}
   m_Name: 12x9
   m_EditorClassIdentifier: Assembly-CSharp::ArithmeticQuestion
-  category: 0
+  category: 1
   difficulty: 1
   operands: 0c00000009000000
   operators: 02000000

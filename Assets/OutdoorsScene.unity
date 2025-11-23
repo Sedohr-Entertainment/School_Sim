@@ -949,16 +949,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1a8389b7a44ab7499c835f5e139a4f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::QuizManager
-  questions:
-  - {fileID: 11400000, guid: 656c9fad1ae204640bf08957b1467edc, type: 2}
-  - {fileID: 11400000, guid: b7568522f140f974aa0d6e94f665de19, type: 2}
-  - {fileID: 11400000, guid: ce52c8a2c8c34174a8b1f2704bd79e4a, type: 2}
-  - {fileID: 11400000, guid: 51a63f1b86cd1af4995581e85dc0c12d, type: 2}
-  - {fileID: 11400000, guid: 5318ac64ff6d73d4f875ef26717c64d6, type: 2}
+  allQuestions:
+  - {fileID: 11400000, guid: bfdaf432404993f44a5f8e90ed154a38, type: 2}
+  - {fileID: 11400000, guid: e36aee94bbc0591418970f481c39c4ce, type: 2}
+  - {fileID: 11400000, guid: 00b7d20d61acfd64eaf9fa52bf000c48, type: 2}
+  - {fileID: 11400000, guid: db485107b1008c94a923c26e288d1b10, type: 2}
+  - {fileID: 11400000, guid: 6a046b17cce2aca4d977694437c5f7b6, type: 2}
+  - {fileID: 11400000, guid: a9966dfbc1b288f4690b12c9d2999aa5, type: 2}
+  - {fileID: 11400000, guid: ae36a03af7140db44bcfa3ab9b8afa31, type: 2}
+  - {fileID: 11400000, guid: a3e7b3ddd8583954d900d4ce5f389c9a, type: 2}
+  - {fileID: 11400000, guid: 45d84378ba719944aa0d4ce06a7a82ad, type: 2}
+  - {fileID: 11400000, guid: 578ebc2df8e22e34c9c868e9771cd2d0, type: 2}
+  - {fileID: 11400000, guid: d8f0a8372d32b174c8c6bca63c9d8379, type: 2}
+  - {fileID: 11400000, guid: 6ada21f208bfc4d4693b09a57ea6c90e, type: 2}
+  activeCategories: 01000000
+  minDifficulty: 1
+  maxDifficulty: 10
   quizStation: {fileID: 334506359}
   quizUI: {fileID: 670838382}
-  currentQuestionIndex: 0
-  correctCount: 0
   blackboardRenderer: {fileID: 844231714}
 --- !u!4 &628438114
 Transform:
@@ -1121,6 +1129,7 @@ MonoBehaviour:
   quizManager: {fileID: 628438113}
   questionText: {fileID: 1311190481}
   answerText: {fileID: 441173034}
+  metaText: {fileID: 0}
 --- !u!1 &724727944
 GameObject:
   m_ObjectHideFlags: 0
